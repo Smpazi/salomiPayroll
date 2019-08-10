@@ -3,7 +3,7 @@ package ac.cput.domain.demographic;
 import java.util.Objects;
 
 public class Race {
-    private String raceId, black,white,other;
+    private String raceId, descr_race;
 
     private Race(){
     }
@@ -16,47 +16,26 @@ public class Race {
         return raceId;
     }
 
-    public String getBlack() {
-        return black;
+    public String getDescr_race() {
+        return descr_race;
     }
-
-    public String getWhite() {
-        return white;
-    }
-
-    public String getOther() {
-        return other;
-    }
-
 
     public static class Builder{
-        private String raceId, black,white,other;
+        private String raceId, discr_race;
 
         public Builder raceId(String raceId){
             this.raceId =raceId;
             return this;
         }
 
-        public Builder black(String black){
-            this.black =black;
-            return this;
-        }
-
-        public  Builder white(String white){
-            this.white= white;
-            return this;
-        }
-        public  Builder other(String other){
-            this.other= other;
+        public Builder discr_race(String discr_race){
+            this.discr_race =discr_race;
             return this;
         }
 
         public Builder copy(Race race){
             this.raceId = race.raceId;
-            this.black = race.black;
-            this.white = race.white;
-            this.other= race.other;
-
+            this.discr_race= race.descr_race;
             return this;
         }
 
@@ -69,9 +48,8 @@ public class Race {
     public String toString() {
         return "RaceFactory{" +
                 "RaceId='" + raceId + '\'' +
-                ", Black='" + black + '\'' +
-                ", White='" + white + '\'' +
-                ", Other='" + other + '\'' +
+                ", Race='" + descr_race + '\'' +
+
 
                 '}';
     }

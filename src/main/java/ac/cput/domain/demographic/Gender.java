@@ -4,47 +4,38 @@ import java.util.Objects;
 
 public class Gender {
 
-    private String genderId, female, male;
+    private String genderId, descr_gender;
 
     private Gender(){
     }
 
     private Gender(Builder builder){
         this.genderId= builder.genderId;
-        this.female = builder.female;
-        this.male= builder.male;
+        this.descr_gender= builder.descr_gender;
+
     }
 
-    public String getFemale() {
-        return female;
-    }
-
-    public String getMale() {
-        return male;
+    public String getGenderId() {
+        return genderId;
     }
 
     public static class Builder{
-        private String genderId, female, male;
+        private String genderId, descr_gender;
 
         public Builder genderId(String genderId){
             this.genderId =genderId;
             return this;
         }
 
-        public Builder female(String female){
-            this.female =female;
+        public Builder descr_gender(String descr_gender){
+            this.descr_gender=descr_gender;
             return this;
         }
 
-        public  Builder male(String male){
-            this.male= male;
-            return this;
-        }
 
         public Builder copy(Gender gender){
             this.genderId = gender.genderId;
-            this.female = gender.female;
-            this.male = gender.male;
+            this.descr_gender = gender.descr_gender;
 
             return this;
         }
@@ -57,9 +48,8 @@ public class Gender {
     @Override
     public String toString() {
         return "GenderFactory{" +
-                "genderId='" + genderId + '\'' +
-                ", Female='" + female + '\'' +
-                ", Male='" + male + '\'' +
+                "GenderId='" + genderId + '\'' +
+                ", Gender='" + descr_gender + '\'' +
                 '}';
     }
     @Override

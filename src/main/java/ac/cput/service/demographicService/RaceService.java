@@ -1,4 +1,4 @@
 package ac.cput.service.demographicService;
 
-public class Gender {
+public interface RaceService {
 }
