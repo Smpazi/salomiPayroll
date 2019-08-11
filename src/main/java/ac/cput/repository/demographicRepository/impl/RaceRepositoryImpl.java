@@ -56,6 +56,7 @@ public class RaceRepositoryImpl implements RaceRepository {
 
     @Override
     public void delete(String s) {
+
         this.raceMap.remove(s);
     }
 }

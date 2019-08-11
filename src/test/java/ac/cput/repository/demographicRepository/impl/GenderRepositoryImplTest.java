@@ -68,7 +68,7 @@ public class GenderRepositoryImplTest {
     @Test
     public void delete() {
 
-        this.genderRepository.delete("");
+        this.genderRepository.delete("M44");
         Gender gender= genderRepository.read("M44");
         assertNull(gender);
 

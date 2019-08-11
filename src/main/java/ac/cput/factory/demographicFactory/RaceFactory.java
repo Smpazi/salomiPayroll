@@ -9,7 +9,7 @@ public class RaceFactory {
     {
         return new Race.Builder()
                 .raceId(values.get("RaceId"))
-                .discr_race(values.get("RaceDesc"))
+                .discr_race(values.get("Race"))
                 .build();
 
     }

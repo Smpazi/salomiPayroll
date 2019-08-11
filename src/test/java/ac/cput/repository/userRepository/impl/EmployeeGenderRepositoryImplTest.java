@@ -22,8 +22,8 @@ public class EmployeeGenderRepositoryImplTest {
     public  void setUp() throws Exception{
         this.employeeGenderRepository = EmployeeGenderRepositoryImpl.getEmployeeGenderRepository();
         values= new HashMap<>();
-        values.put("EmployeeGenderId","222");
-        values.put("GenderID","F23");
+        values.put("EmployeeId","E7");
+        values.put("GenderID","M7");
 
         this.employeeGender = EmployeeGenderFactory.getEmployeeGender(values);
 
@@ -38,24 +38,24 @@ public class EmployeeGenderRepositoryImplTest {
 
     @Test
     public void read() {
-        EmployeeGender employee = new EmployeeGender().employeeGender(values.get("EmployeeGenderId"), values.get("GenderID"));
+        EmployeeGender employee = new EmployeeGender().employeeGender(values.get("EmployeeId"), values.get("GenderID"));
 
         employeeGenderRepository.create(employee);
-        EmployeeGender employeeG = employeeGenderRepository.read("222");
+        EmployeeGender employeeG = employeeGenderRepository.read("E7");
 
-        assertEquals("F23", employeeG.getGenderId());
+        assertEquals("M7", employeeG.getGenderId());
         System.out.println("In read, read = " + employeeG.getGenderId());
     }
     @Test
     public void update()  {
-        EmployeeGender employee = new EmployeeGender()
-                .employeeGender(values.get("EmployeeGenderId"), values.get("GenderID"));
+        EmployeeGender updateEmpl = new EmployeeGender()
+                .employeeGender(values.get("EmployeeId"), "F23");
 
-        employeeGenderRepository.create(employee);
-        EmployeeGender employeeG = employeeGenderRepository.read("222");
+        employeeGenderRepository.update(updateEmpl);
+        EmployeeGender employeeG = employeeGenderRepository.read("E7");
 
         assertEquals("F23", employeeG.getGenderId());
-        System.out.println("In read, read = " + employeeG.getGenderId());
+        System.out.println("In update, update = " + employeeG.getGenderId());
 
     }
 
@@ -63,8 +63,8 @@ public class EmployeeGenderRepositoryImplTest {
     @Test
     public void delete() {
 
-        this.employeeGenderRepository.delete("212");
-        EmployeeGender employee= employeeGenderRepository.read("D33");
+        this.employeeGenderRepository.delete("E7");
+        EmployeeGender employee= employeeGenderRepository.read("E7");
         assertNull(employee);
 
     }

@@ -9,7 +9,8 @@ public class Race {
     }
 
     private Race(Builder builder){
-
+        this.raceId = builder.raceId;
+        this.descr_race= builder.discr_race;
     }
 
     public String getRaceId() {

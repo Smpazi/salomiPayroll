@@ -44,16 +44,15 @@ public class EmployeeRepositoryImplTest {
                 .fName(values.get("Name"))
                 .lName(values.get("Surname"))
                 .build();
+
         employeeRepository.create(employee);
         Employee employee1 = employeeRepository.read("D33");
 
         assertEquals("Salomi", employee1.getfName());
-
         System.out.println("In read, read = " + employee1.getfName());
     }
     @Test
     public void update()  {
-    //  Employee employOld = employeeRepository.read("D33");
 
           Employee updatedEmployee = new Employee.Builder()
                   .employeeId(values.get("EmployeeId"))
