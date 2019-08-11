@@ -35,7 +35,7 @@ public class GenderRepositoryImpl implements GenderRepository {
 
     @Override
     public Gender update(Gender gender) {
-        Gender gender1 = read(gender.getGenderId());
+       /* Gender gender1 = read(gender.getGenderId());
         if (gender1 != null){
             Gender updatedGender = new Gender.Builder()
                     .copy(gender1)
@@ -45,7 +45,11 @@ public class GenderRepositoryImpl implements GenderRepository {
             this.genderMap.put(gender.getGenderId(),updatedGender);
             gender1= updatedGender;
         }
-        return gender1;
+        return gender1;*/
+
+       genderMap.put(gender.getGenderId(),gender);
+       Gender gender1= genderMap.get(gender.getGenderId());
+       return gender1;
     }
 
     @Override

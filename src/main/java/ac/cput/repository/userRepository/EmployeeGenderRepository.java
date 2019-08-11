@@ -6,7 +6,7 @@ import ac.cput.repository.IRepository;
 
 import java.util.Map;
 
-public interface EmployeeGenderRepository extends IRepository<Employee, String> {
+public interface EmployeeGenderRepository extends IRepository<EmployeeGender, String> {
     Map<String, EmployeeGender> getAll();
 
 }

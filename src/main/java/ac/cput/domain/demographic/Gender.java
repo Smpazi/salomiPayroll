@@ -19,6 +19,10 @@ public class Gender {
         return genderId;
     }
 
+    public String getDescr_gender() {
+        return descr_gender;
+    }
+
     public static class Builder{
         private String genderId, descr_gender;
 

@@ -8,6 +8,6 @@ public class EmployeeGenderFactory {
 
     public static EmployeeGender getEmployeeGender(Map<String, String>values){
 
-        return new EmployeeGender().employeeGender(values.get("GenderId"), values.get("Gender"));
+        return new EmployeeGender().employeeGender(values.get("EmployeeGenderId"), values.get("GenderID"));
     }
 }

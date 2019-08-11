@@ -35,7 +35,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Override
     public Employee update(Employee employee) {
-        Employee employeeOld = read(employee.getEmployeeId());
+    /*    Employee employeeOld = read(employee.getEmployeeId());
         if(employeeOld != null){
             Employee updatedEmployee = new Employee.Builder()
                     .copy(employeeOld)
@@ -46,7 +46,10 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             this.employeeMap.put(employee.getEmployeeId(),updatedEmployee);
             employeeOld = updatedEmployee;
         }
-        return employeeOld;
+        return employeeOld;*/
+    employeeMap.put(employee.getEmployeeId(),employee);
+    Employee employ = employeeMap.get(employee.getEmployeeId());
+    return  employ;
     }
 
     @Override
@@ -57,6 +60,9 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Override
     public void delete(String s) {
-        employeeMap.remove(s);
+        Employee toDelete = read(s);
+        if(toDelete !=null) {
+            employeeMap.remove(toDelete);
+        }
     }
 }

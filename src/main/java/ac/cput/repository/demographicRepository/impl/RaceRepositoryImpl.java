@@ -33,7 +33,7 @@ public class RaceRepositoryImpl implements RaceRepository {
 
     @Override
     public Race update(Race race) {
-        Race oldRace = read(race.getRaceId());
+       /* Race oldRace = read(race.getRaceId());
         if(oldRace!= null){
             Race updatedRace = new Race.Builder()
                     .discr_race(race.getDescr_race())
@@ -41,14 +41,16 @@ public class RaceRepositoryImpl implements RaceRepository {
             this.raceMap.remove(oldRace);
             this.raceMap.put(race.getRaceId(),updatedRace);
             oldRace=updatedRace;
-        }
-        return oldRace;
+        }*/
+
+       raceMap.put(race.getRaceId(),race);
+       Race race1= raceMap.get(race.getRaceId());
+        return race1;
     }
 
     @Override
     public Race read(String s) {
         Race race= raceMap.get(s);
-
         return race;
     }
 

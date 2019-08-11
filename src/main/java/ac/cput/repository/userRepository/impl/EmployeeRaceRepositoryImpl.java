@@ -27,21 +27,28 @@ public class EmployeeRaceRepositoryImpl implements EmployeeRaceRepository {
 
     @Override
     public EmployeeRace create(EmployeeRace employeeRace) {
-        return null;
+        employeeRaceMap.put(employeeRace.getEmployeeId(),employeeRace);
+        EmployeeRace employeeRace1= employeeRaceMap.get(employeeRace.getEmployeeId());
+
+        return employeeRace1;
     }
 
     @Override
     public EmployeeRace update(EmployeeRace employeeRace) {
-        return null;
+        employeeRaceMap.put(employeeRace.getEmployeeId(),employeeRace);
+        EmployeeRace employeeRace1= employeeRaceMap.get(employeeRace.getEmployeeId());
+
+        return employeeRace1;
     }
 
     @Override
     public EmployeeRace read(String s) {
-        return null;
+        EmployeeRace employeeRace= employeeRaceMap.get(s);
+        return employeeRace;
     }
 
     @Override
     public void delete(String s) {
-
+        employeeRaceMap.remove(s);
     }
 }

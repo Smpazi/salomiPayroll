@@ -53,26 +53,25 @@ public class EmployeeRepositoryImplTest {
     }
     @Test
     public void update()  {
-       Employee employOld = employeeRepository.read("D33");
-            Employee updatedEmployee = new Employee.Builder()
-                    .employeeId(values.get("EmployeeId"))
-                    .fName("z")
-                    .build();
+    //  Employee employOld = employeeRepository.read("D33");
 
-            values.remove(employOld);
-            values.put("D33","Zia");
-            employOld= updatedEmployee;
-        employeeRepository.update(updatedEmployee);
-        Employee UpdateEmp = employeeRepository.read("D33");
-   assertEquals("Zia",UpdateEmp.getfName());
+          Employee updatedEmployee = new Employee.Builder()
+                  .employeeId(values.get("EmployeeId"))
+                  .fName("Zia")
+                  .build();
 
-        System.out.println("In update, updated = " + employOld.getfName());
+          employeeRepository.update(updatedEmployee);
+         Employee updateEmp = employeeRepository.read("D33");
+
+        assertEquals("Zia",updateEmp.getfName());
+        System.out.println("In update, updated = " + updateEmp.getfName());
 
     }
 
 
     @Test
     public void delete() {
+
         this.employeeRepository.delete("D33");
         Employee employee= employeeRepository.read("D33");
         assertNull(employee);
@@ -82,6 +81,7 @@ public class EmployeeRepositoryImplTest {
     @Test
     public void  getAll(){
         Map<String,Employee> all = this.employeeRepository.getAll();
+        Assert.assertNotNull(all);
         System.out.println(all);
     }
 

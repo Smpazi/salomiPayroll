@@ -10,7 +10,7 @@ public class GenderFactory {
     {
         return new Gender.Builder()
                 .genderId(values.get("GenderId"))
-                .descr_gender(values.get("GenderDesc"))
+                .descr_gender(values.get("Gender"))
                 .build();
 
     }
