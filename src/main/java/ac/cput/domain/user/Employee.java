@@ -9,6 +9,7 @@ public class Employee {
     }
 
     private Employee(Builder builder){
+        this.employeeId = builder.employeeId;
         this.fName =builder.fName;
         this.lName=builder.lName;
 
@@ -21,6 +22,7 @@ public class Employee {
     public String getfName() {
         return fName;
     }
+
 
     public String getlName() {
         return lName;
@@ -43,6 +45,7 @@ public class Employee {
             return this;
         }
         public Builder copy(Employee employee){
+            this.employeeId = employee.employeeId;
             this.fName= employee.fName;
             this.lName=employee.lName;
             return this;
